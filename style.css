@@ -82,3 +82,22 @@ h2 {
   border-radius: 5px;
   width: auto;
 }
+
+.btn {
+  background: #0077b6;
+  color: #fefefe;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-large {
+  width: 100%;
+}
+
+.btn:hover {
+  background: #023e8a;
+}
