@@ -40,10 +40,10 @@ function generatePassword(lower, upper, number, symbol, length) {
   let generatedPassword = '';
   const typesCount = lower + upper + number + symbol; // Total active options
   const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
-    (type) => Object.values(type)[0] // to include only checked options
+    (type) => Object.values(type)[0] // Include only checked options
   );
 
-  if (typesCount === 0) return ''; // if no options selected
+  if (typesCount === 0) return ''; // No options selected
 
   // Loop to create password
   for (let i = 0; i < length; i += typesCount) {
@@ -55,4 +55,25 @@ function generatePassword(lower, upper, number, symbol, length) {
 
   // Trim password to desired length
   return generatedPassword.slice(0, length);
+}
+
+// Generate random lowercase letter
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+
+// Generate random uppercase letter
+function getRandomUpper() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+
+// Generate random number
+function getRandomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+
+// Generate random symbol
+function getRandomSymbol() {
+  const symbols = '!@#$%^&*(){}[]=<>/,.';
+  return symbols[Math.floor(Math.random() * symbols.length)];
 }
